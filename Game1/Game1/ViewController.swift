@@ -21,7 +21,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     var timer:Timer?
     
-    var milliseconds:Float = 20 * 1000
+    var milliseconds:Float = 40 * 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()

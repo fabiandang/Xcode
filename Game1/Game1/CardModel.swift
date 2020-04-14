@@ -13,28 +13,45 @@ class CardModel {
     
     func getCard() -> [Card] {
         
+        var generatedNumberArray = [Int]()
+        
         var generatedCardArry = [Card]()
         
-        for _ in 1...8 {
+        while generatedNumberArray.count < 8 {
             
             let randomnumber = Int.random(in: 1...13)
             
-            print(randomnumber)
+            if generatedNumberArray.contains(randomnumber) == false {
             
-            let cardOne = Card()
-            cardOne.imageName = "card\(randomnumber)"
-            
-            generatedCardArry.append(cardOne)
-            
-            let cardTwo = Card()
-            cardTwo.imageName = "card\(randomnumber)"
-            
-            generatedCardArry.append(cardTwo)
-            
-            
+                generatedNumberArray.append(randomnumber)
+                
+                let cardOne = Card()
+                cardOne.imageName = "card\(randomnumber)"
+                
+                generatedCardArry.append(cardOne)
+                
+                let cardTwo = Card()
+                cardTwo.imageName = "card\(randomnumber)"
+                
+                generatedCardArry.append(cardTwo)
+                
+                
+            }
             
         }
        
+        for i in 0...generatedCardArry.count-1 {
+            
+            let randomnumber = Int.random(in: 0...generatedCardArry.count-1)
+            
+            let temporaryStorage = generatedCardArry[i]
+            
+            generatedCardArry[i] = generatedCardArry[randomnumber]
+            generatedCardArry[randomnumber] = temporaryStorage
+            
+            
+        }
+        
         return generatedCardArry
         
     }
