@@ -29,19 +29,19 @@ extension UIViewController {
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var textNameInput: UITextField!
+    @IBOutlet weak var textNameInput: UITextField?
     
-    @IBOutlet weak var textEmailInput: UITextField!
+    @IBOutlet weak var textEmailInput: UITextField?
     
-    @IBOutlet weak var textPasswordInput: UITextField!
+    @IBOutlet weak var textPasswordInput: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        textNameInput.delegate = self
-        textEmailInput.delegate = self
-        textPasswordInput.delegate = self
+        textNameInput?.delegate = self
+        textEmailInput?.delegate = self
+        textPasswordInput?.delegate = self
         
         self.HideKeyboard()
       
@@ -50,9 +50,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //keyboard return
     func textFieldShouldReturn(_ textField:UITextField) -> Bool {
         
-        textNameInput.resignFirstResponder()
-        textEmailInput.resignFirstResponder()
-        textPasswordInput.resignFirstResponder()
+        textNameInput?.resignFirstResponder()
+        textEmailInput?.resignFirstResponder()
+        textPasswordInput?.resignFirstResponder()
         
         return true
         
