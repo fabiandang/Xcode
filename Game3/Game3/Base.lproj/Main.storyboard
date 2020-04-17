@@ -19,8 +19,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-mS-P6Y">
+                                <rect key="frame" x="20" y="876" width="374" height="20"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="R73-Da-h7k"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tef-g5-gaQ">
-                                <rect key="frame" x="20" y="98" width="374" height="764"/>
+                                <rect key="frame" x="20" y="98" width="374" height="778"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vI7-KX-NLx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="733"/>
@@ -195,16 +205,20 @@
                         <constraints>
                             <constraint firstItem="4Ym-CR-tpV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2C7-DU-1jt"/>
                             <constraint firstAttribute="bottom" secondItem="4Ym-CR-tpV" secondAttribute="bottom" id="GD8-9a-5wq"/>
+                            <constraint firstItem="aFf-mS-P6Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="L5U-VX-XgR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aFf-mS-P6Y" secondAttribute="trailing" constant="20" id="Qay-gc-VNR"/>
                             <constraint firstItem="4Ym-CR-tpV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gPJ-VR-30M"/>
                             <constraint firstItem="4Ym-CR-tpV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ocq-mL-MsC"/>
-                            <constraint firstItem="tef-g5-gaQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="r3D-4W-vaY"/>
+                            <constraint firstItem="tef-g5-gaQ" firstAttribute="bottom" secondItem="aFf-mS-P6Y" secondAttribute="top" id="r3D-4W-vaY"/>
                             <constraint firstItem="tef-g5-gaQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="rfx-e7-iDO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tef-g5-gaQ" secondAttribute="trailing" constant="20" id="yhd-SN-e2j"/>
                             <constraint firstItem="tef-g5-gaQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zFh-zY-Fp0"/>
+                            <constraint firstAttribute="bottom" secondItem="aFf-mS-P6Y" secondAttribute="bottom" id="zWX-dJ-wJC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="paddingBottomHeight" destination="R73-Da-h7k" id="RS3-b6-2R8"/>
                         <outlet property="textEmailInput" destination="eIf-pf-ZZ3" id="Fza-pp-qDm"/>
                         <outlet property="textNameInput" destination="bCI-Uo-9ov" id="G6I-iT-2uQ"/>
                         <outlet property="textPasswordInput" destination="fQh-Pf-A4s" id="Ngd-mj-ArB"/>
