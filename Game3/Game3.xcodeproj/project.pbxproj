@@ -13,6 +13,7 @@
 		24DF622D244860EF00898AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DF622B244860EF00898AC1 /* Main.storyboard */; };
 		24DF622F244860F000898AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24DF622E244860F000898AC1 /* Assets.xcassets */; };
 		24DF6232244860F000898AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DF6230244860F000898AC1 /* LaunchScreen.storyboard */; };
+		26A7C161244AC438008867FE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A7C160244AC438008867FE /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		24DF622E244860F000898AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24DF6231244860F000898AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24DF6233244860F000898AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A7C160244AC438008867FE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		24DF6224244860EF00898AC1 /* Game3 */ = {
 			isa = PBXGroup;
 			children = (
+				26A7C15F244AC409008867FE /* CustomViews */,
 				24DF6225244860EF00898AC1 /* AppDelegate.swift */,
 				24DF6227244860EF00898AC1 /* SceneDelegate.swift */,
 				24DF6229244860EF00898AC1 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				24DF6233244860F000898AC1 /* Info.plist */,
 			);
 			path = Game3;
+			sourceTree = "<group>";
+		};
+		26A7C15F244AC409008867FE /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				26A7C160244AC438008867FE /* CustomTextField.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A7C161244AC438008867FE /* CustomTextField.swift in Sources */,
 				24DF622A244860EF00898AC1 /* ViewController.swift in Sources */,
 				24DF6226244860EF00898AC1 /* AppDelegate.swift in Sources */,
 				24DF6228244860EF00898AC1 /* SceneDelegate.swift in Sources */,

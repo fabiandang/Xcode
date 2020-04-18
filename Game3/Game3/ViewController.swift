@@ -8,105 +8,181 @@
 
 import UIKit
 
-
-//keyboard dismiss
-extension UIViewController {
-    func HideKeyboard() {
-        
-        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
-               
-        view.addGestureRecognizer(Tap)
-        
+class ViewController: UIViewController {
+    @IBOutlet weak private var paddingBottomHeight : NSLayoutConstraint!
+    @IBOutlet weak private var textNameInput       : CustomTextField!
+    @IBOutlet weak private var textEmailInput      : CustomTextField!
+    @IBOutlet weak private var textPasswordInput   : CustomTextField!
+    
+    // MARK: ViewController lifecycle
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        print("--------------------------------")
+        print("👍👍👍👍 0 [DEBUG] \(self) init")
     }
-    
-    @objc func DismissKeyboard() {
-    
-        view.endEditing(true)
-    }
-    
-    
-}
-
-class ViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var paddingBottomHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var textNameInput: UITextField?
-    
-    @IBOutlet weak var textEmailInput: UITextField?
-    
-    @IBOutlet weak var textPasswordInput: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-        textNameInput?.layer.borderWidth = 0.5
-        textNameInput?.layer.borderColor =  UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1).cgColor
-        self.HideKeyboard()
-        
-        textEmailInput?.layer.borderWidth = 0.5
-        textEmailInput?.layer.borderColor =  UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1).cgColor
-        self.HideKeyboard()
-        
-        textPasswordInput?.layer.borderWidth = 0.5
-        textPasswordInput?.layer.borderColor =  UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1).cgColor
-        
-        textNameInput?.delegate = self
-        textEmailInput?.delegate = self
-        textPasswordInput?.delegate = self
-        
-        
-        
-        self.HideKeyboard()
-        
-        paddingBottomHeight?.constant = 0
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillHideNotification,  object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification,  object: nil)
-      
+        setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("✂️✂️✂️✂️ 1 [DEBUG] \(self) viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("✂️✂️✂️✂️ 2 [DEBUG] \(self) viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("✂️✂️✂️✂️ 3 [DEBUG] \(self) viewWillDisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("✂️✂️✂️✂️ 4 [DEBUG] \(self) viewDidDisappear")
+    }
+    
+    // This is destructor
+    // If called after this class is detroyed.
+    deinit {
+        print("👍👍👍👍 5 [DEBUG] \(self) deinit")
+        removeNotifications()
+    }
+    
+    // MARK: - Private function
+    private func setup() {
+        // Setup CustomTextField's style
+        
+        // This `textNameInput` is NULL on signup screen
+        // Let check its pointer
+        //
+        // MARK: You can use:
+        /*
+        if textNameInput != nil {
+            textNameInput.setAsDefault()
+        }
+        */
+        // MARK: OR
+        if let unNULL_textNameInput = textNameInput {
+            unNULL_textNameInput.setAsDefault()
+        }
+        //
+        
+        textEmailInput.setAsDefault()
+        textPasswordInput.setAsDefault()
+        // Hide keyboard at the first time
+        initTapGesture()
+        // Keyboard `height = 0` at the first time
+        updateKeyboard(height: 0)
+        // Notification
+        initNotifications()
+    }
+}
+
+// MARK: - Nofitication
+
+private var Notification = NotificationCenter.default
+extension ViewController {
+    private func initNotifications() {
+        Notification.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillHideNotification,  object: nil)
+        Notification.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification,  object: nil)
+    }
+    
+    private func removeNotifications() {
+        Notification.removeObserver(self)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let isHideKeyboard: Bool = (notification.name == UIResponder.keyboardWillHideNotification)
+        
+        // MARK: You can use If-else:
+        /*
+        if isHideKeyboard{
+            updateKeyboard(height: 0)
+         }
+         else {
+            updateKeyboard(height: notification.keyboardHeight)
+        }
+        */
+        
+        // MARK: OR using this `Shorthand If`
+        updateKeyboard(height: (isHideKeyboard ? 0 : notification.keyboardHeight))
+     }
+}
+
+
+
+
+// MARK: - Handle Keyboard state
+
+extension ViewController {
+    private func updateKeyboard(height: CGFloat) {
+        if let unNULL_paddingBottomHeight = paddingBottomHeight {
+            unNULL_paddingBottomHeight.constant = height
+        }
+    }
+}
+
+
+
+
+// MARK: - Tapgesture (Tap on to hide the keyboard if needed)
+
+extension ViewController {
+    private func initTapGesture() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(Tap)
+    }
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
+
+
+// MARK: - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate {
     //keyboard return
-    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
-        textField.resignFirstResponder()
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboard()
         return true
         
     }
-    
-    @objc func keyboardWillShow(notification: Notification) {
-        
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            
-            paddingBottomHeight.constant = 0
-        
-        }
-            
-        else {
-            let keyboardFrame: NSValue = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            
-            paddingBottomHeight.constant = keyboardRectangle.height
-     
-            print(keyboardRectangle.height)
-        }
-   
-        
-        
+
+    internal func textFieldDidBeginEditing(_ textField: UITextField) {
+        // MARK: Optional variable
+        // see: https://medium.com/@agoiabeladeyemi/optionals-in-swift-2b141f12f870
+        let customTextField = (textField as? CustomTextField)
+        customTextField?.setAsHighlight()
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 0.5
-        textField.layer.borderColor = UIColor(red: 0.949, green: 0.788, blue: 0.298, alpha: 1).cgColor
-        
+    internal func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        // MARK: Optional variable
+        // see: https://medium.com/@agoiabeladeyemi/optionals-in-swift-2b141f12f870
+        let customTextField = (textField as? CustomTextField)
+        customTextField?.setAsDefault()
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        textField.layer.borderWidth = 0.5
-        textField.layer.borderColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1).cgColor
-    }
-    
-   
 }
 
+
+
+
+// MARK: - Notification extension
+// You can create any custom-functions by yourself
+
+fileprivate
+extension Notification {
+    var keyboardHeight: CGFloat {
+        let keyboardFrame: NSValue = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        return keyboardRectangle.size.height
+    }
+}
