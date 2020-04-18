@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak private var textEmailInput      : CustomTextField!
     @IBOutlet weak private var textPasswordInput   : CustomTextField!
     
+    @IBOutlet weak var vaildEmailText: UILabel!
+    
     // MARK: ViewController lifecycle
     
     required init?(coder: NSCoder) {
@@ -54,6 +56,22 @@ class ViewController: UIViewController {
         print("👍👍👍👍 5 [DEBUG] \(self) deinit")
         removeNotifications()
     }
+    
+    @IBAction func textEmailDidChanged(_ sender: CustomTextField) {
+        
+        if sender.isValidEmail(email: sender.text! ) {
+                   
+            vaildEmailText?.text = ""
+                   
+        }
+        else {
+            
+         vaildEmailText?.text = "Your email address is incorrect"
+            
+        }
+    }
+    
+
     
     // MARK: - Private function
     private func setup() {
@@ -114,6 +132,7 @@ extension ViewController {
         // MARK: OR using this `Shorthand If`
         updateKeyboard(height: (isHideKeyboard ? 0 : notification.keyboardHeight))
      }
+    
 }
 
 
