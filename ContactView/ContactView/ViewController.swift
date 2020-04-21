@@ -12,25 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var contactView: UITableView!
     
-    var namesGroup = [String:[String]]()
+    var namesGroup = [String:[Contact]]()
     var keySectionTitles = [String]()
-    let names:[String] = [
-        "AAAAA DSAD",
-        "ADSD CSCS ",
-        "BADS CASDSD",
-        "BASDODSDSA DAD",
-        "MASDA ADWD",
-        "XSD ASDDS",
-        "CADSD ADSDA",
-        "EASD ASDSAD",
-        "FAFALDKW ASD",
-        "OPSFASDA SDKASd",
-        "924 ASDS",
-        "11232 PAS",
-        "DSDGSDFSDF",
-        "DFASF SD ASDASD",
-        "R ADS ADS",
-    ]
+    let contacts:[Contact] = ContactDataProvider.contacts
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +23,9 @@ class ViewController: UIViewController {
         contactView.delegate = self
         contactView.dataSource = self
         
-        for key in names {
+        for key in contacts {
             
-            let keysection = String(key.prefix(1))
+            let keysection = String(key.name.prefix(1))
             if var keyvalues = namesGroup[keysection] {
                 
                 keyvalues.append(key)
@@ -68,7 +52,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you taped \(names[indexPath.row])")
+        print("you taped \(contacts[indexPath.row])")
     }
     
     
@@ -101,8 +85,8 @@ extension ViewController: UITableViewDataSource {
         let keysection = keySectionTitles[indexPath.section]
         
         if let keyvalues = namesGroup[keysection] {
-            
-            cell.textLabel?.text = keyvalues[indexPath.row]
+            let contact = keyvalues[indexPath.row]
+            cell.textLabel?.text = contact.name
               
         }
         
