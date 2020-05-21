@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         contactView.dataSource = self
         searchBar.delegate = self
         
+        self.hideKeyboardWhenTappedAround()
+        
         if searchBar.searchTextField.text?.isEmpty == true {
             filterArray = contacts
         }
@@ -96,12 +98,14 @@ extension ViewController: UITableViewDataSource {
         if let keyvalues = namesGroup[keysection] {
             
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-            
+           
             let contact = keyvalues[indexPath.row]
             
             cell.textLabel?.text = contact.name
             
             cell.detailTextLabel?.text = contact.phoneNumber
+            
+            cell.textLabel?.attributedText = self.filterAndModifyTextAttributes(searchStringCharacters: (self.searchBar?.text)!, completeStringWithAttributedText: contact.name)
               
         }
         
@@ -114,6 +118,35 @@ extension ViewController: UITableViewDataSource {
         return keySectionTitles[section]
         
     }
+    
+    private func filterAndModifyTextAttributes(searchStringCharacters: String, completeStringWithAttributedText: String) -> NSMutableAttributedString {
+
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: completeStringWithAttributedText)
+        
+        let pattern = searchStringCharacters.lowercased()
+        
+        let range: NSRange = NSMakeRange(0, completeStringWithAttributedText.count)
+        
+        var regex = NSRegularExpression()
+        
+        do {
+            regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options())
+            regex.enumerateMatches(in: completeStringWithAttributedText.lowercased(), options: NSRegularExpression.MatchingOptions(), range: range) {
+                (textCheckingResult, matchingFlags, stop) in
+                let subRange = textCheckingResult?.range
+                let attributes : [NSAttributedString.Key : Any] = [.font : UIFont.boldSystemFont(ofSize: 17),.foregroundColor: UIColor.red ]
+                attributedString.addAttributes(attributes, range: subRange!)
+            }
+        }
+        catch {
+            
+            print(error.localizedDescription)
+            
+        }
+        
+        return attributedString
+    }
+
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -139,15 +172,14 @@ extension ViewController: UISearchBarDelegate {
         
         if searchText.isEmpty == false {
             
-            filterArray = contacts.filter({$0.name.contains(searchText)})
-            
+            //filterArray = contacts.filter({$0.name.contains(searchText)})
+            filterArray  = contacts.filter({$0.name.lowercased().contains(searchText.lowercased())})
         }
         
         for key in filterArray {
             
             let keysection = String(key.name.prefix(1))
 
-           
             if var keyvalues = namesGroup[keysection] {
                 
                 keyvalues.append(key)
@@ -169,3 +201,17 @@ extension ViewController: UISearchBarDelegate {
     }
     
 }
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
