@@ -62,6 +62,10 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you taped \(filterArray[indexPath.row])")
+        
+        performSegue(withIdentifier: "editContact", sender: self)    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
     
     
