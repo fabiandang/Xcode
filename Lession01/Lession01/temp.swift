@@ -73,12 +73,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         stackView.axis = .vertical
         
-        //view.addSubview(stackView)
+        view.addSubview(stackView)
         
-        //stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 400, right: 0))
-        
-        let customSegment = CustomSegment(frame: CGRect(x:20.0,y:20.0,width:300.0,height: 300.0))
-        self.view.addSubview(customSegment)
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 400, right: 0))
         
     }
 

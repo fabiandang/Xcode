@@ -20,17 +20,17 @@ class CustomSegment: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    func commonInitialization() {
-        let view = Bundle.main.loadNibNamed("CustomSegment", owner: self, options: nil)?.first as! UIView
+    func commonInit() {
+        let view = Bundle.main.loadNibNamed("CustomSegment", owner: self, options: nil)![0] as! UIView
         view.frame = self.bounds
-        self.addSubview(view)
-        
+        addSubview(view)
     }
 
 }
