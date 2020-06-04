@@ -58,10 +58,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     lazy var rowtoDisplay = nowPlaying
     
+    @IBOutlet weak var customSeg: CustomSegment!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
+        //view.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -77,8 +78,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 400, right: 0))
         
-        let customSegment = CustomSegment(frame: CGRect(x:20.0,y:20.0,width:300.0,height: 300.0))
+        let customSegment = CustomSegment(frame: CGRect(x:20.0,y:20.0,width: self.view.safeAreaLayoutGuide.layoutFrame.width ,height: self.view.safeAreaLayoutGuide.layoutFrame.height))
         self.view.addSubview(customSegment)
+        
+        print(self.view.safeAreaLayoutGuide.layoutFrame.width)
+        print(self.view.safeAreaLayoutGuide.layoutFrame.height)
         
     }
 

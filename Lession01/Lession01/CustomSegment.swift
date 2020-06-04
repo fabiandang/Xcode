@@ -18,6 +18,14 @@ class CustomSegment: UIView {
     }
     */
     
+    @IBOutlet weak var button1: UIButton!
+    
+    @IBOutlet weak var button2: UIButton!
+    
+    @IBOutlet weak var button3: UIButton!
+    
+    @IBOutlet weak var button4: UIButton!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -28,9 +36,24 @@ class CustomSegment: UIView {
     }
     
     func commonInit() {
+        
+        
         let view = Bundle.main.loadNibNamed("CustomSegment", owner: self, options: nil)![0] as! UIView
         view.frame = self.bounds
+        
+        button1.translatesAutoresizingMaskIntoConstraints = false
+        button1.frame.size.width = (view.frame.width / 2)
+        button2.translatesAutoresizingMaskIntoConstraints = false
+        button2.frame.size.width = view.frame.width / 4
+        button3.translatesAutoresizingMaskIntoConstraints = false
+        button3.frame.size.width = view.frame.width / 4
+        button4.translatesAutoresizingMaskIntoConstraints = false
+        button4.frame.size.width = view.frame.width / 4
+        
         addSubview(view)
+        view.addSubview(button1)
+        print(button1.frame.size.width)
+        print(view.frame.width)
     }
 
 }

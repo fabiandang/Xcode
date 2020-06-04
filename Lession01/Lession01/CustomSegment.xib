@@ -7,44 +7,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomSegment" customModule="Lession01" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomSegment" customModule="Lession01" customModuleProvider="target">
+            <connections>
+                <outlet property="button1" destination="r63-wk-efo" id="j9t-f3-TWJ"/>
+                <outlet property="button2" destination="M5j-op-HES" id="blt-En-Z9Y"/>
+                <outlet property="button3" destination="uUt-fy-V4F" id="jJV-o0-Y2R"/>
+                <outlet property="button4" destination="yZf-R0-mTI" id="qd6-lc-Xff"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomSegment" customModule="Lession01" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5j-op-HES">
-                    <rect key="frame" x="70" y="54" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5j-op-HES">
+                    <rect key="frame" x="111" y="48" width="87" height="30"/>
                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZf-R0-mTI">
-                    <rect key="frame" x="170" y="54" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZf-R0-mTI">
+                    <rect key="frame" x="293" y="48" width="87" height="30"/>
                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-fy-V4F">
-                    <rect key="frame" x="120" y="54" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-fy-V4F">
+                    <rect key="frame" x="202" y="48" width="87" height="30"/>
                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXC-A6-apq">
-                    <rect key="frame" x="20" y="94" width="374" height="768"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXC-A6-apq">
+                    <rect key="frame" x="0.0" y="82" width="414" height="834"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r63-wk-efo">
-                    <rect key="frame" x="20" y="54" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r63-wk-efo">
+                    <rect key="frame" x="20" y="48" width="87" height="30"/>
                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,7 +54,25 @@
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="M5j-op-HES" firstAttribute="width" secondItem="r63-wk-efo" secondAttribute="width" id="85d-ZK-Cwh"/>
+                <constraint firstItem="uUt-fy-V4F" firstAttribute="width" secondItem="r63-wk-efo" secondAttribute="width" id="8u9-nl-9fc"/>
+                <constraint firstItem="M5j-op-HES" firstAttribute="leading" secondItem="r63-wk-efo" secondAttribute="trailing" constant="4" id="BL9-F1-MMx"/>
+                <constraint firstItem="rXC-A6-apq" firstAttribute="top" secondItem="M5j-op-HES" secondAttribute="bottom" constant="4" id="JgO-E7-8yU"/>
+                <constraint firstItem="uUt-fy-V4F" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="L42-qk-CXn"/>
+                <constraint firstItem="yZf-R0-mTI" firstAttribute="width" secondItem="r63-wk-efo" secondAttribute="width" id="a7r-jL-bQT"/>
+                <constraint firstItem="r63-wk-efo" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="aLR-fc-3om"/>
+                <constraint firstItem="rXC-A6-apq" firstAttribute="leading" secondItem="KYV-2e-G6t" secondAttribute="leading" id="dbh-Be-d8h"/>
+                <constraint firstItem="KYV-2e-G6t" firstAttribute="trailing" secondItem="rXC-A6-apq" secondAttribute="trailing" id="f9Y-KT-nT2"/>
+                <constraint firstItem="rXC-A6-apq" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="20" id="hal-za-3U2"/>
+                <constraint firstItem="yZf-R0-mTI" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="j0r-zQ-Ckc"/>
+                <constraint firstItem="r63-wk-efo" firstAttribute="width" secondItem="KYV-2e-G6t" secondAttribute="width" multiplier="0.21" id="nOA-b5-vel"/>
+                <constraint firstItem="r63-wk-efo" firstAttribute="leading" secondItem="KYV-2e-G6t" secondAttribute="leading" constant="20" id="rEk-6W-6HM"/>
+                <constraint firstItem="uUt-fy-V4F" firstAttribute="leading" secondItem="M5j-op-HES" secondAttribute="trailing" constant="4" id="sv8-cD-z6W"/>
+                <constraint firstItem="M5j-op-HES" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="uuq-mH-8gJ"/>
+                <constraint firstItem="yZf-R0-mTI" firstAttribute="leading" secondItem="uUt-fy-V4F" secondAttribute="trailing" constant="4" id="wp1-2q-Qv0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="KYV-2e-G6t"/>
             <point key="canvasLocation" x="139" y="103"/>
         </view>
     </objects>
