@@ -41,10 +41,6 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXC-A6-apq">
-                    <rect key="frame" x="0.0" y="82" width="414" height="834"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r63-wk-efo">
                     <rect key="frame" x="20" y="48" width="87" height="30"/>
                     <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,13 +54,9 @@
                 <constraint firstItem="M5j-op-HES" firstAttribute="width" secondItem="r63-wk-efo" secondAttribute="width" id="85d-ZK-Cwh"/>
                 <constraint firstItem="uUt-fy-V4F" firstAttribute="width" secondItem="r63-wk-efo" secondAttribute="width" id="8u9-nl-9fc"/>
                 <constraint firstItem="M5j-op-HES" firstAttribute="leading" secondItem="r63-wk-efo" secondAttribute="trailing" constant="4" id="BL9-F1-MMx"/>
-                <constraint firstItem="rXC-A6-apq" firstAttribute="top" secondItem="M5j-op-HES" secondAttribute="bottom" constant="4" id="JgO-E7-8yU"/>
                 <constraint firstItem="uUt-fy-V4F" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="L42-qk-CXn"/>
                 <constraint firstItem="yZf-R0-mTI" firstAttribute="width" secondItem="r63-wk-efo" secondAttribute="width" id="a7r-jL-bQT"/>
                 <constraint firstItem="r63-wk-efo" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="aLR-fc-3om"/>
-                <constraint firstItem="rXC-A6-apq" firstAttribute="leading" secondItem="KYV-2e-G6t" secondAttribute="leading" id="dbh-Be-d8h"/>
-                <constraint firstItem="KYV-2e-G6t" firstAttribute="trailing" secondItem="rXC-A6-apq" secondAttribute="trailing" id="f9Y-KT-nT2"/>
-                <constraint firstItem="rXC-A6-apq" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="20" id="hal-za-3U2"/>
                 <constraint firstItem="yZf-R0-mTI" firstAttribute="top" secondItem="KYV-2e-G6t" secondAttribute="top" constant="4" id="j0r-zQ-Ckc"/>
                 <constraint firstItem="r63-wk-efo" firstAttribute="width" secondItem="KYV-2e-G6t" secondAttribute="width" multiplier="0.21" id="nOA-b5-vel"/>
                 <constraint firstItem="r63-wk-efo" firstAttribute="leading" secondItem="KYV-2e-G6t" secondAttribute="leading" constant="20" id="rEk-6W-6HM"/>

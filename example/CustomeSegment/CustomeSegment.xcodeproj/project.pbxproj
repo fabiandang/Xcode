@@ -15,6 +15,8 @@
 		26B3AA76248AA70600A48B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B3AA74248AA70600A48B99 /* LaunchScreen.storyboard */; };
 		26B3AA7E248AA7B900A48B99 /* CustomSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B3AA7D248AA7B900A48B99 /* CustomSegment.xib */; };
 		26B3AA80248AAB7600A48B99 /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B3AA7F248AAB7600A48B99 /* CustomSegment.swift */; };
+		84BF102E249004A400D77C7B /* CustomRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF102D249004A400D77C7B /* CustomRating.swift */; };
+		84BF10302490058E00D77C7B /* CustomRating.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF102F2490058E00D77C7B /* CustomRating.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		26B3AA77248AA70600A48B99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26B3AA7D248AA7B900A48B99 /* CustomSegment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSegment.xib; sourceTree = "<group>"; };
 		26B3AA7F248AAB7600A48B99 /* CustomSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
+		84BF102D249004A400D77C7B /* CustomRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRating.swift; sourceTree = "<group>"; };
+		84BF102F2490058E00D77C7B /* CustomRating.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRating.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				26B3AA77248AA70600A48B99 /* Info.plist */,
 				26B3AA7D248AA7B900A48B99 /* CustomSegment.xib */,
 				26B3AA7F248AAB7600A48B99 /* CustomSegment.swift */,
+				84BF102D249004A400D77C7B /* CustomRating.swift */,
+				84BF102F2490058E00D77C7B /* CustomRating.xib */,
 			);
 			path = CustomeSegment;
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 				26B3AA76248AA70600A48B99 /* LaunchScreen.storyboard in Resources */,
 				26B3AA73248AA70600A48B99 /* Assets.xcassets in Resources */,
 				26B3AA71248AA70500A48B99 /* Main.storyboard in Resources */,
+				84BF10302490058E00D77C7B /* CustomRating.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +154,7 @@
 			files = (
 				26B3AA80248AAB7600A48B99 /* CustomSegment.swift in Sources */,
 				26B3AA6E248AA70500A48B99 /* ViewController.swift in Sources */,
+				84BF102E249004A400D77C7B /* CustomRating.swift in Sources */,
 				26B3AA6A248AA70500A48B99 /* AppDelegate.swift in Sources */,
 				26B3AA6C248AA70500A48B99 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,13 +301,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W249D963J4;
+				DEVELOPMENT_TEAM = L369DX36CF;
 				INFOPLIST_FILE = CustomeSegment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahamove.CustomeSegment;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.home.CustomeSegment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -311,13 +321,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W249D963J4;
+				DEVELOPMENT_TEAM = L369DX36CF;
 				INFOPLIST_FILE = CustomeSegment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ahamove.CustomeSegment;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.home.CustomeSegment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

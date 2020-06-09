@@ -31,6 +31,12 @@ class ViewController: UIViewController {
         segment.autoresizingMask = .flexibleWidth
         //
         self.view.addSubview(segment)
+        
+        let starRating = CustomRating.loadFromXIB()
+        starRating.delegate = self
+        starRating.frame = CGRect.init(x: 20, y: 200, width: 237, height: 22)
+        starRating.autoresizingMask = .flexibleWidth
+        self.view.addSubview(starRating)
     }
 }
 
@@ -38,4 +44,10 @@ extension ViewController: CustomSegmentDelegate {
    func didSelectedItem(at index: Int) {
        print("didSelectedItem: \(index)")
    }
+}
+
+extension ViewController: CustomRatingDelegate {
+    func didSelectedRating(at index: Int) {
+        print("didSelectedRating: \(index)")
+    }
 }
