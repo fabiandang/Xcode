@@ -8,22 +8,19 @@
 
 import UIKit
 
-protocol CustomRatingDelegate: NSObject {
-    func didSelectedRating(at index: Int)
-}
 
 class CustomRating: UIView {
 
-    weak var delegate : CustomRatingDelegate?
+    //weak var delegate : CustomRatingDelegate?
     
     @IBOutlet var starButton: [UIButton]!
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
-    
-        delegate?.didSelectedRating(at: sender.tag)
+    //@IBAction func buttonTapped(_ sender: UIButton) {
+    func starRating (_ starrated: Int) {
+        //delegate?.didSelectedRating(at: sender.tag)
         
         for button in starButton {
-            if button.tag <= sender.tag {
+            if button.tag <= starrated {
                 button.setBackgroundImage(UIImage.init(named: "startOn"), for: .normal)
             } else {
                 button.setBackgroundImage(UIImage.init(named: "startOff"), for: .normal)
